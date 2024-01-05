@@ -3,7 +3,7 @@ import apj from '../../Assets/Images/apj.png'
 import einstein from '../../Assets/Images/einstein.png'
 import nelsonMandela from '../../Assets/Images/nelsonMandela.png'
 import steveJobs from '../../Assets/Images/steveJobs.png'
-import billGates from '../.0../Assets/Images/billGates.png'
+import billGates from '../../Assets/Images/billGates.png'
 export const celebrities = [
     {
         title: "Nelson Mandela",
