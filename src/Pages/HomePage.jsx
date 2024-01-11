@@ -10,7 +10,7 @@ function HomePage() {
                     <div className='w-1/2 space-y-6'>
                         <h1 className=' text-5xl font-semibold capitalize'>
                             find out best
-                            <span className=' text-yellow-500 font-bold'>Online Cources</span>
+                            <span className=' text-yellow-500 font-bold'> Online Cources</span>
                         </h1>
                         <p className=' text-xl text-gray-200'>
                             We have a large library of cources though by highly skilled and qulified faculty at a very afordable cost.

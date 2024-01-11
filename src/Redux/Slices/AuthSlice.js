@@ -1,6 +1,5 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import toast from "react-hot-toast";
-// import axiosInstance from '../../Helpers/axiosInstance.js'
 import axiosInstance from "../../Helpers/axiosInstance";
 const initialState = {
     isLoggedIn: localStorage.getItem('isLoggedIn') || false,
@@ -9,39 +8,23 @@ const initialState = {
 }
 
 // Async thunk
-// export const createAccount = createAsyncThunk('/user/signup', async (data) => {
-//     try {
-//         const response = await axiosInstance.post('/auth/register')
-//         toast.promise(response, {
-//             loading: 'Creating account...',
-//             success: (data) => {
-//                 return data?.data?.message
-//             },
-//             error: "Failed to create account"
-//         });
-//         return response.data;
-//         return response.data;
-
-//     } catch (error) {
-//         toast.error(error?.response?.data?.message)
-//     }
-// })
-
-export const createAccount = createAsyncThunk("/user/signup", async (data) => {
+export const createAccount = createAsyncThunk('/user/signup', async (data) => {
     try {
-        const res = axiosInstance.post("/register", data);
-        toast.promise(res, {
-            loading: "Wait! creating your account",
+        const response = await axiosInstance.post('/register')
+        toast.promise(response, {
+            loading: 'Creating account...',
             success: (data) => {
-                return data?.data?.message;
+                return data?.data?.message
             },
             error: "Failed to create account"
         });
-        return (await res).data;
+        return response.data;
     } catch (error) {
-        toast.error(error?.response?.data?.message);
+        toast.error(error?.response?.data?.message)
     }
 })
+
+
 const authSlice = createSlice({
     name: 'auth',
     initialState,

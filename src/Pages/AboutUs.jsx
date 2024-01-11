@@ -1,6 +1,6 @@
 import React from 'react'
 import HomeLayout from '../Layouts/HomeLayout'
-import AboutImg from '../Assets/Images/aboutMainImage.png'
+import aboutMainImage from '../Assets/Images/aboutMainImage.png'
 import { celebrities } from '../Component/Contants/CeleratyData.js'
 import CarouselSlide from '../Component/CarouselSlide.jsx'
 function AboutUs() {
@@ -23,7 +23,7 @@ function AboutUs() {
                                 filter: 'drop-shadow(0px 10px rgb(0,0,0))'
                             }}
                             className=' drop-shadow-2xl'
-                            src={AboutImg}
+                            src={aboutMainImage}
                             alt="AboutUs img" />
                     </div>
                 </div>
