@@ -6,9 +6,12 @@ import Footer from '../Component/Footer'
 function HomeLayout({ children }) {
     const dispatch = useDispatch();
     const navigate = useNavigate();
-    // for checking if user is logged in
-    const isLoggedIn = useSelector((state) => state?.auth?.isLoggedIn);
-    // for displaying the options acc to role
+
+
+    // for checking if user is logged in 
+    const isLoggedIn = useSelector((state) => state?.auth?.isLoggedIn)
+
+    // for displaying the options according to role
     const role = useSelector((state) => state?.auth?.role);
     function changeWidth() {
         const drawerSide = document.getElementsByClassName("drawer-side");
@@ -51,7 +54,7 @@ function HomeLayout({ children }) {
                         <li>
                             <Link to="/">Home</Link>
                         </li>
-                        {isLoggedIn && role === 'ADMIN' && (
+                        {isLoggedIn && role === 'Admin' && (
                             <li>
                                 <Link to="/admin/dashboard"> Admin DashBoard</Link>
                             </li>
@@ -66,25 +69,25 @@ function HomeLayout({ children }) {
                             <Link to="/about">About Us</Link>
                         </li>
                         {!isLoggedIn && (
-                            <li className="absolute bottom-4 w-[90%]">
-                                <div className="w-full flex items-center justify-center">
-                                    <button className='btn-primary px-4 py-1 font-semibold rounded-md w-full'>
-                                        <Link to="/login">Login</Link>
+                            <li className='absolute bottom-4 w-[90%]'>
+                                <div className=' w-full flex items-center justify-center'>
+                                    <button className=' btn-primary px-2 py-1 font-semibold rounded-md w-full'>
+                                        <Link to='/login'>Login</Link>
                                     </button>
-                                    <button className='btn-secondary px-4 py-1 font-semibold rounded-md w-full'>
-                                        <Link to="/login">Signup</Link>
-                                        <Link to="/signup">Signup</Link>
+                                    <button className=' btn-secondary px-2 py-1 font-semibold rounded-md w-full'>
+                                        <Link to='/signup'>Signup</Link>
                                     </button>
                                 </div>
                             </li>
                         )}
+
                         {isLoggedIn && (
-                            <li className="absolute bottom-4 w-[90%]">
-                                <div className="w-full flex items-center justify-center">
-                                    <button className='btn-primary px-4 py-1 font-semibold rounded-md w-full'>
-                                        <Link to="/user/profile">Profile</Link>
+                            <li className='absolute bottom-4 w-[90%]'>
+                                <div className=' w-full flex items-center justify-center'>
+                                    <button className=' btn-primary px-2 py-1 font-semibold rounded-md w-full'>
+                                        <Link to='/user/profile'>Profile</Link>
                                     </button>
-                                    <button className='btn-secondary px-4 py-1 font-semibold rounded-md w-full'>
+                                    <button className=' btn-secondary px-2 py-1 font-semibold rounded-md w-full'>
                                         <Link onClick={handleLogout}>Logout</Link>
                                     </button>
                                 </div>
