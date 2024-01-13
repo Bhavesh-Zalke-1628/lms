@@ -1,13 +1,11 @@
-// import the packages
 import { useState } from 'react';
 import { toast } from 'react-hot-toast';
 import { BsPersonCircle } from 'react-icons/bs';
 import { useDispatch } from 'react-redux';
 import { Link, useNavigate } from 'react-router-dom';
 
-// import the files 
 import HomeLayout from '../Layouts/HomeLayout';
-import { createAccount } from '../Redux/Slices/AuthSlice.js';
+import { createAccount } from '../Redux/Slices/AuthSlice';
 
 function Signup() {
 
@@ -91,6 +89,8 @@ function Signup() {
             avatar: ""
         });
         setPreviewImage("");
+
+
     }
 
     return (
