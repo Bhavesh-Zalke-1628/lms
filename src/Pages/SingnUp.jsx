@@ -5,7 +5,7 @@ import { useDispatch } from 'react-redux';
 import { Link, useNavigate } from 'react-router-dom';
 
 import HomeLayout from '../Layouts/HomeLayout';
-import { createAccount } from '../Redux/Slices/AuthSlice';
+import { createNewAccount } from '../Redux/Slices/AuthSlice.js';
 
 function Signup() {
 
@@ -48,7 +48,7 @@ function Signup() {
         }
     }
 
-    async function createNewAccount(event) {
+    async function createAccount(event) {
         event.preventDefault();
         if(!signupData.email || !signupData.password || !signupData.fullName || !signupData.avatar) {
             toast.error("Please fill all the details");
@@ -78,7 +78,7 @@ function Signup() {
         formData.append("avatar", signupData.avatar);
 
         // dispatch create account action
-        const response = await dispatch(createAccount(formData));
+        const response = await dispatch(createNewAccount(formData));
         if(response?.payload?.success)
             navigate("/");
 
@@ -111,7 +111,7 @@ function Signup() {
                         className="hidden"
                         type="file"
                         name="image_uploads"
-                        id="image_uploads"
+                        id="image_uploads"  
                         accept=".jpg, .jpeg, .png, .svg"
                     />
                     <div className='flex flex-col gap-1'>
