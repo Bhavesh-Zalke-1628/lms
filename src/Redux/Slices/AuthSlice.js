@@ -1,26 +1,20 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import { toast } from "react-hot-toast";
 import axiosInstance from '../../Helpers/axiosInstance.js'
-import axios from "axios";
 const initialState = {
     isLoggedIn: localStorage.getItem('is'),
     role: localStorage.getItem('role') || "",
     data: localStorage.getItem('data') || {}
 }
 
-export const createNewAccount = createAsyncThunk("user/signup", async (data) => {
+export const createAccount = createAsyncThunk("/signup", async (data) => {
     try {
-        const res = axiosInstance.post("/api/auth/register",{
-            fullname : data.fullname ,
-            email :data.email,
-            password:data.password,
-            avatar:data.avatar,
-        });
+        const res = axiosInstance.post("/auth/register",data);
         toast.promise(res, {
             loading: "Wait! creating your account",
             success: (data) => {
-                console.log(data?.data?.message)
-                return data?.data?.message;
+                console.log(data)
+                return data?.user?.data;
             },
             error: "Failed to create account"
         });
@@ -32,7 +26,7 @@ export const createNewAccount = createAsyncThunk("user/signup", async (data) => 
 
 export const login = createAsyncThunk("/login", async (data) => {
     try {
-        const res = axiosInstance.post("/login", data);
+        const res = axiosInstance.post("auth/login", data);
         toast.promise(res, {
             loading: "Wait! Authentication in process",
             success: (data) => {
@@ -79,7 +73,7 @@ const authSlice = createSlice({
             })
             .addCase(logout.fulfilled, (state) => {
                 localStorage.clear()
-                state.data = {};
+                state.data = {}; 
                 state.isLoggedIn = false
                 state.role = "";
             })
