@@ -4,7 +4,6 @@ import { useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { useState } from 'react';
 import { toast } from 'react-hot-toast';
-import { BsPersonCircle } from 'react-icons/bs'
 import { Link } from 'react-router-dom';
 
 // Import the files
@@ -12,7 +11,7 @@ import HomeLayout from '../Layouts/HomeLayout';
 import { login } from '../Redux/Slices/AuthSlice.js'
 
 
-function Login() {
+function LogIn() {
 
     const dispatch = useDispatch();
     const navigate = useNavigate();
@@ -39,7 +38,7 @@ function Login() {
         }
 
         // dispatch create account action
-        const response = await dispatch(login(onLogin));
+        const response = await dispatch(login(loginData));
         if (response?.payload?.success)
             navigate("/");
 
@@ -87,7 +86,7 @@ function Login() {
                     </button>
 
                     <p className="text-center">
-                        Do not have an accout? <Link to="/signup" className='link text-accent cursor-pointer'> Signin</Link>
+                        Do not have an accout? <Link to="/signup" className='link text-accent cursor-pointer'>SignUp</Link>
                     </p>
 
                 </form>
@@ -96,4 +95,4 @@ function Login() {
     );
 }
 
-export default Login
+export default LogIn
