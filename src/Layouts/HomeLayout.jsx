@@ -3,6 +3,7 @@ import { FiMenu } from 'react-icons/fi';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link, useNavigate } from 'react-router-dom';
 import Footer from '../Component/Footer'
+import { logout } from '../Redux/Slices/AuthSlice';
 function HomeLayout({ children }) {
     const dispatch = useDispatch();
     const navigate = useNavigate();

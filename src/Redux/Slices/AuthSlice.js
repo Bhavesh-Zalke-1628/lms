@@ -43,7 +43,7 @@ export const login = createAsyncThunk("/login", async (data) => {
 
 export const logout = createAsyncThunk("/logout", async () => {
     try {
-        const res = axiosInstance.post('/auth/logout')
+        const res = axiosInstance.get('/auth/logout')
         toast.promise(res, {
             loading: "Wait! Logging out",
             success: (data) => {
