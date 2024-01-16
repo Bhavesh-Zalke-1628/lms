@@ -14,7 +14,7 @@ export const createAccount = createAsyncThunk("/signup", async (data) => {
             loading: "Wait! creating your account",
             success: (data) => {
                 console.log(data)
-                return data?.user?.data;
+                return data?.data?.msg;
             },
             error: "Failed to create account"
         });
@@ -30,7 +30,7 @@ export const login = createAsyncThunk("/login", async (data) => {
         toast.promise(res, {
             loading: "Wait! Authentication in process",
             success: (data) => {
-                return data?.data?.message;
+                return data?.data?.msg;
             },
             error: "Failed to login"
         });
@@ -47,7 +47,7 @@ export const logout = createAsyncThunk("/logout", async () => {
         toast.promise(res, {
             loading: "Wait! Logging out",
             success: (data) => {
-                return data?.data?.message;
+                return data?.data?.msg;
             },
             error: 'failed to logout'
         })

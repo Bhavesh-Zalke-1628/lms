@@ -4,7 +4,7 @@ import CourceSlice from './Slices/CourceSlice.js';
 const store = configureStore({
     reducer: {
         auth: authSlice,
-        cource: CourceSlice
+        courses: CourceSlice
     },
     devTools: true
 });
