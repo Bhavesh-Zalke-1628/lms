@@ -13,7 +13,7 @@ function Denied() {
             </div>
             <button onClick={() => navigate(-1)} className=' mt-5 '>
                 <span className=' relative block px-8 py-3 bg-[#1a2238] border border-current '>
-                    Go back
+                    Go Back
                 </span>
             </button>
         </main>

@@ -1,6 +1,5 @@
 // import the packages
 import { Route, Routes } from 'react-router-dom'
-import { useState } from 'react'
 
 // // File import
 import HomePage from './Pages/HomePage'
@@ -8,9 +7,9 @@ import AboutUs from './Pages/AboutUs'
 import NotFound from './Pages/NotFoundPage'
 import SignUp from './Pages/SignUp'
 import LogIn from './Pages/LogIn'
-import CourceList from './Pages/Cources Pages/CourceList'
 import Contact from './Pages/Contact'
 import Denied from './Pages/Denied'
+import CourceList from './Pages/CourcesPages/CourceList'
 const App = () => {
   return (
     <>
@@ -26,9 +25,9 @@ const App = () => {
         <Route path='/cources' element={<CourceList />}></Route>
 
 
-
         {/* Denied Page */}
-        <Route path='/denied' element={<Denied/>}></Route>
+        <Route path='/denied' element={<Denied />}></Route>
+        {/* Not Found Page */}
         <Route path='*' element={<NotFound />}></Route>
       </Routes>
 
