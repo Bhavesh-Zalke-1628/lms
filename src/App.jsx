@@ -10,6 +10,7 @@ import SignUp from './Pages/SignUp'
 import LogIn from './Pages/LogIn'
 import CourceList from './Pages/Cources Pages/CourceList'
 import Contact from './Pages/Contact'
+import Denied from './Pages/Denied'
 const App = () => {
   return (
     <>
@@ -19,11 +20,15 @@ const App = () => {
         <Route path='/about' element={<AboutUs />}></Route>
         <Route path='/signup' element={<SignUp />}></Route>
         <Route path='/login' element={<LogIn />}></Route>
+        <Route path='/contact' element={<Contact />}></Route>
 
         {/* Cources Routes */}
-        {/* <Route path='/cources' element={<CourceList />}></Route> */}
+        <Route path='/cources' element={<CourceList />}></Route>
 
-        <Route path='/contact' element={<Contact />}></Route>
+
+
+        {/* Denied Page */}
+        <Route path='/denied' element={<Denied/>}></Route>
         <Route path='*' element={<NotFound />}></Route>
       </Routes>
 
