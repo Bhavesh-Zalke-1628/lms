@@ -13,6 +13,7 @@ import CourceList from './Pages/CourcesPages/CourceList'
 import CourceDescription from './Pages/CourcesPages/CourceDescription'
 import RequireAuth from './Component/Auth/RequireAuth'
 import CreateCourse from './Pages/CourcesPages/CreateCourse'
+import UserProfile from './Pages/User/UserProfile'
 const App = () => {
   return (
     <>
@@ -36,6 +37,9 @@ const App = () => {
         </Route>
 
         {/* User Profile */}
+        <Route element={<RequireAuth allowedRoles={["ADMIN", "USER"]} />}>
+          <Route path='/user/profile' element={<UserProfile />} />
+        </Route>
 
         {/* Denied Page */}
         <Route path='/denied' element={<Denied />}></Route>
