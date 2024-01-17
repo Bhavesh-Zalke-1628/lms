@@ -2,14 +2,14 @@ import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import { toast } from "react-hot-toast";
 import axiosInstance from '../../Helpers/axiosInstance.js'
 const initialState = {
-    isLoggedIn: localStorage.getItem('is'),
+    isLoggedIn: localStorage.getItem('isLoggedIn') || false,
     role: localStorage.getItem('role') || "",
     data: localStorage.getItem('data') || {}
 }
 
 export const createAccount = createAsyncThunk("/signup", async (data) => {
     try {
-        const res = axiosInstance.post("/auth/register",data);
+        const res = axiosInstance.post("/auth/register", data);
         toast.promise(res, {
             loading: "Wait! creating your account",
             success: (data) => {
@@ -73,7 +73,7 @@ const authSlice = createSlice({
             })
             .addCase(logout.fulfilled, (state) => {
                 localStorage.clear()
-                state.data = {}; 
+                state.data = {};
                 state.isLoggedIn = false
                 state.role = "";
             })

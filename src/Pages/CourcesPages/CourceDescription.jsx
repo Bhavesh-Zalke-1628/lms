@@ -14,7 +14,7 @@ function CourceDescription() {
                 <div className=' grid grid-cols-2 gap-10 py-10 relative'>
                     <div className=' space-y-5'>
                         <img
-                            className=' w-full h-64'
+                            className=' w-full h-64 rounded-xl'
                             src={state?.thumbnails?.secure_url}
                             alt="thumbnail" />
                         <div className=' space-y-4'>
