@@ -27,8 +27,8 @@ function HomeLayout({ children }) {
     async function handleLogout(e) {
         e.preventDefault();
         const res = await dispatch(logout());
-        if(res?.payload?.success)
-        navigate("/");
+        if (res?.payload?.success)
+            navigate("/");
     }
     return (
         <div className="min-h-[90vh]">
@@ -56,9 +56,15 @@ function HomeLayout({ children }) {
                             <Link to="/">Home</Link>
                         </li>
                         {isLoggedIn && role === 'Admin' && (
-                            <li>
-                                <Link to="/admin/dashboard"> Admin DashBoard</Link>
-                            </li>
+                            <>
+                                <li>
+                                    <Link to="/admin/dashboard"> Admin DashBoard</Link>
+                                </li>
+                                <li>
+                                    <Link to="/course/create">Create New Cource</Link>
+                                </li>
+                            </>
+
                         )}
                         <li>
                             <Link to="/cources">All Courses</Link>
