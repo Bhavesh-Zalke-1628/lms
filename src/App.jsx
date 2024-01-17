@@ -10,6 +10,7 @@ import LogIn from './Pages/LogIn'
 import Contact from './Pages/Contact'
 import Denied from './Pages/Denied'
 import CourceList from './Pages/CourcesPages/CourceList'
+import CourceDescription from './Pages/CourcesPages/CourceDescription'
 const App = () => {
   return (
     <>
@@ -23,7 +24,7 @@ const App = () => {
 
         {/* Cources Routes */}
         <Route path='/cources' element={<CourceList />}></Route>
-
+        <Route path='/course/description' element={<CourceDescription />}></Route>
 
         {/* Denied Page */}
         <Route path='/denied' element={<Denied />}></Route>

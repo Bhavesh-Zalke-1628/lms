@@ -12,7 +12,6 @@ export const getAllCourses = createAsyncThunk("/course", async () => {
             success: "Courses loaded successfully",
             error: "Failed to get the courses",
         });
-        console.log((await response).data)
         return (await response).data.cources;
     } catch(error) {
         toast.error(error?.response?.data?.message);

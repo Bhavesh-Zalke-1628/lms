@@ -61,7 +61,7 @@ function HomeLayout({ children }) {
                             </li>
                         )}
                         <li>
-                            <Link to="/courses">All Courses</Link>
+                            <Link to="/cources">All Courses</Link>
                         </li>
                         <li>
                             <Link to="/contact">Contact Us</Link>
@@ -71,11 +71,11 @@ function HomeLayout({ children }) {
                         </li>
                         {!isLoggedIn && (
                             <li className='absolute bottom-4 w-[90%]'>
-                                <div className=' w-full flex items-center justify-center'>
-                                    <button className=' btn-primary px-2 py-1 font-semibold rounded-md w-full'>
+                                <div className=' w-full flex items-center justify-center gap-2'>
+                                    <button className=' px-2 py-1 font-semibold rounded-md w-fulltext-white bg-pink-500 hover:text-white transition-all ease-in-out duration-300 w-full'>
                                         <Link to='/login'>Login</Link>
                                     </button>
-                                    <button className=' btn-secondary px-2 py-1 font-semibold rounded-md w-full'>
+                                    <button className='px-2 py-1 font-semibold rounded-md w-full hover:bg-yellow-300 hover:text-black transition-all ease-in-out duration-400'>
                                         <Link to='/signup'>Signup</Link>
                                     </button>
                                 </div>
